@@ -1,0 +1,169 @@
+body {
+  background-color: #f2f2f2;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px #0000001a;
+  text-align: center;
+}
+
+h1 {
+  color: #333;
+}
+
+h1 a {
+  text-decoration: none;
+  color: crimson;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+h1 a::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #ff1140;
+  bottom: -2px;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+h1 a:hover::before {
+  transform: scaleX(1);
+}
+
+.input-container {
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+label {
+  margin: 2px;
+  font-weight: bold;
+}
+
+input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin-top: 10px;
+  font-size: 15px;
+  outline-color: orange;
+}
+
+input[type="number"]:hover {
+  border-color: orange;
+}
+
+/* Remove Arrows/Spinners for Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="text"] {
+  font-size: 15px;
+  width: 100%;
+  padding: 5px;
+  margin-top: 5px;
+  border: none;
+  background-color: white;
+}
+
+button {
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #49ca4d;
+}
+
+button[onclick="clearFields()"] {
+  background-color: crimson;
+}
+
+button[onclick="clearFields()"]:hover {
+  background-color: #ff1140;
+}
+
+#result {
+  margin: 15px 0 15px 0;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.total-earnings {
+  color: #4caf50;
+  font-weight: bold;
+  font-size: 30px;
+  margin: 15px auto;
+}
+
+.isNan {
+  color: #ff1140;
+  font-size: 18px;
+}
+
+/* Responsive web design */
+@media only screen and (max-width: 390px) {
+  .container {
+    max-width: 280px;
+  }
+
+  h1 {
+    font-size: 23px;
+  }
+
+  label {
+    font-size: 13px;
+  }
+
+  input[type="number"] {
+    font-size: 13px;
+    padding: 7px;
+  }
+
+  input[type="text"] {
+    font-size: 13px;
+  }
+
+  button {
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  #result {
+    font-size: 17px;
+  }
+
+  .total-earnings {
+    font-size: 23px;
+  }
+
+  .isNan {
+    font-size: 15px;
+  }
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Earnings Calculator at BrightCHAMPS</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="shortcut icon"
+      href="images/bmi-categories.jpg"
+      type="image/x-icon"
+    />
+    <!-- meta data / SEO -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@halip26" />
+    <meta name="twitter:creator" content="@halip26" />
+    <meta
+      name="twitter:title"
+      content="BrightCHAMPS Teacher's earnings calculator by Mr. Halip"
+    />
+    <meta
+      name="twitter:description"
+      content="Teacher earnings calculator in BrightCHAMPS is implemented in HTML, CSS, and JavaScript."
+    />
+    <meta
+      name="twitter:image"
+      content="https://halip26.github.io/earnings-calculator/images/Screenshot.png"
+    />
+    <meta
+      name="twitter:url"
+      content="https://halip26.github.io/earnings-calculator"
+    />
+    <meta
+      property="og:title"
+      content="BrightCHAMPS Teacher's earnings calculator by Mr. Halip"
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:site_name"
+      content="BrightCHAMPS Teacher's earnings calculator by Mr. Halip"
+    />
+    <meta
+      property="og:description"
+      content="Teacher earnings calculator in BrightCHAMPS is implemented in HTML, CSS, and JavaScript."
+    />
+    <meta
+      property="og:image"
+      content="https://halip26.github.io/earnings-calculator/images/Screenshot.png"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>
+        Earnings Calculator by
+        <a target="_blank " href="https://halip26.github.io/"
+          >Mr. Halip (6448)</a
+        >
+      </h1>
+      <div class="input-container">
+        <label for="earnings">Your Earnings (INR):</label>
+        <input
+          type="number"
+          id="earnings"
+          placeholder="Enter Your Earnings Here!"
+        />
+      </div>
+      <div class="input-container">
+        <label for="rates">Exchange Rates (IDR):</label>
+        <input type="text" id="rates" placeholder="196" disabled />
+      </div>
+      <div class="input-container">
+        <label for="tax">Earnings tax in indonesia:</label>
+        <input type="text" id="tax" placeholder="2.5%" disabled />
+      </div>
+      <button onclick="calculateBMI()">Calculate</button>
+      <button onclick="clearFields()">Clear</button>
+    </div>
+
+    <!-- seperate the result with main container -->
+    <div id="show-result"></div>
+
+    <!-- script js  -->
+    <script src="script.js"></script>
+  </body>
+</html>
