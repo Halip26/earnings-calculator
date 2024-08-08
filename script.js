@@ -1,10 +1,18 @@
-function calculateBMI() {
-  const earningsInput = document.getElementById("earnings");
+// add event listener on input field
+const earningsInput = document.getElementById("earnings");
+earningsInput.addEventListener("keydown", function (event) {
+  // call the calculateEarnings() function if the Enter key is pressed
+  if (event.key === "Enter") {
+    calculateEarnings();
+  }
+});
+
+function calculateEarnings() {
   const rates = 196;
   const tax = 2.5;
   const showResultDiv = document.getElementById("show-result");
 
-  // konversi ke data type float
+  // convert to float data type
   const earningsINR = parseFloat(earningsInput.value);
   const exchangeRate = parseFloat(rates);
   const taxInPercent = tax / 100;
@@ -17,7 +25,7 @@ function calculateBMI() {
   const totalEarnings =
     earningsINR * exchangeRate - earningsINR * exchangeRate * taxInPercent;
 
-  // Change totalEarnings format to rupiah
+  // change totalEarnings format to rupiah
   const formattedTotalEarnings = totalEarnings.toLocaleString("id-ID", {
     minimumFractionDigits: 2, // set minimum number of decimals
   });
