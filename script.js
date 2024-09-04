@@ -38,11 +38,36 @@ function calculateEarnings() {
 
   // Display the result
   showResultDiv.innerHTML = `<div class="container">
-      <div id="result">Your monthly earnings are: </br> <div class="total-earnings">Rp${formattedTotalEarnings}</div>`;
+      <div id="result">Your monthly earnings are: </br> <div class="total-earnings">Rp${formattedTotalEarnings}</div></div></div>`;
+
+  // Save data to localStorage
+  const earningsData = {
+    earningsINR: earningsINR,
+    totalEarnings: totalEarnings,
+    formattedTotalEarnings: formattedTotalEarnings,
+    timestamp: new Date().toISOString(),
+  };
+  localStorage.setItem("earningsData", JSON.stringify(earningsData));
 }
 
-// Function to clear input fields
-function clearFields() {
-  document.getElementById("earnings").value = "";
-  document.getElementById("show-result").innerHTML = "";
+// Function to load data from localStorage when the page loads
+function loadEarningsData() {
+  const showResultDiv = document.getElementById("show-result");
+  const storedData = localStorage.getItem("earningsData");
+  if (storedData) {
+    const earningsData = JSON.parse(storedData);
+    earningsInput.value = earningsData.earningsINR;
+    showResultDiv.innerHTML = `<div class="container">
+      <div id="result">Your monthly earnings are: </br> <div class="total-earnings">Rp${earningsData.formattedTotalEarnings}</div></div></div>`;
+  }
 }
+
+// Function to clear input fields and localStorage
+function clearFields() {
+  earningsInput.value = "";
+  document.getElementById("show-result").innerHTML = "";
+  localStorage.removeItem("earningsData");
+}
+
+// Call the loadEarningsData function when the page loads
+window.addEventListener("load", loadEarningsData);
