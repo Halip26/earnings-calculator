@@ -52,7 +52,7 @@ label {
   font-weight: bold;
 }
 
-input[type="number"] {
+.earningsInput {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
@@ -63,7 +63,7 @@ input[type="number"] {
   outline-color: orange;
 }
 
-input[type="number"]:hover {
+.earningsInput {
   border-color: orange;
 }
 
@@ -140,7 +140,7 @@ button[onclick="clearFields()"]:hover {
     font-size: 13px;
   }
 
-  input[type="number"] {
+  .earningsInput {
     font-size: 13px;
     padding: 7px;
   }
