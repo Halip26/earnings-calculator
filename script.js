@@ -11,8 +11,27 @@ function removeCommas(value) {
   return value.replace(/,/g, "");
 }
 
+// Function to get query parameters from URL
+function getQueryParams() {
+  const params = {};
+  const queryString = window.location.search.substring(1);
+  const queryArray = queryString.split("&");
+  queryArray.forEach((param) => {
+    const [key, value] = param.split("=");
+    params[key] = decodeURIComponent(value);
+  });
+  return params;
+}
+
 window.onload = function () {
   const earningsInput = document.getElementById("earnings");
+
+  // Get query parameters
+  const queryParams = getQueryParams();
+  if (queryParams.earnings) {
+    earningsInput.value = formatNumberWithCommas(queryParams.earnings);
+    calculateEarnings(); // Automatically calculate earnings if parameter is present
+  }
 
   earningsInput.addEventListener("input", function (event) {
     // Get the input value
