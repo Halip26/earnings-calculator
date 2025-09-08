@@ -58,7 +58,7 @@ window.onload = function () {
 // Function to calculate earnings
 function calculateEarnings() {
   // Exchange rate and tax rate (in percent)
-  const rates = 196;
+  const rates = 186.5;
   const tax = 2.5;
 
   // Get the div where the result will be displayed
