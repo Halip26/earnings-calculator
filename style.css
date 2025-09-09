@@ -52,7 +52,16 @@ label {
   font-weight: bold;
 }
 
-.earningsInput[type="text"] {
+small {
+  margin-left: 3px;
+  font-size: 13px;
+  color: #888;
+  display: block;
+  margin-top: 3px;
+}
+
+.earningsInput[type="text"],
+.ratesInput[type="text"] {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
@@ -63,7 +72,8 @@ label {
   outline-color: orange;
 }
 
-.earningsInput {
+.earningsInput,
+.ratesInput {
   border-color: orange;
 }
 
@@ -140,7 +150,8 @@ button[onclick="clearFields()"]:hover {
     font-size: 13px;
   }
 
-  .earningsInput {
+  .earningsInput,
+  .ratesInput {
     font-size: 13px;
     padding: 7px;
   }
