@@ -64,7 +64,18 @@
       </div>
       <div class="input-container">
         <label for="rates">Exchange Rates (IDR):</label>
-        <input type="text" id="rates" placeholder="186.5" disabled />
+        <small>
+          Note: There seems to be a change in the exchange rate from 196 to
+          186.5. You can now update the exchange rate as needed.
+        </small>
+        <input
+          inputmode="numeric"
+          class="ratesInput"
+          type="text"
+          id="rates"
+          value="196"
+          placeholder="Enter the Exchange Rate here!"
+        />
       </div>
       <div class="input-container">
         <label for="tax">Earnings tax in indonesia:</label>
