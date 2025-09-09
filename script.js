@@ -58,7 +58,7 @@ window.onload = function () {
 // Function to calculate earnings
 function calculateEarnings() {
   // Exchange rate and tax rate (in percent)
-  const rates = 186.5;
+  let rates = document.getElementById("rates").value;
   const tax = 2.5;
 
   // Get the div where the result will be displayed
@@ -94,6 +94,7 @@ function calculateEarnings() {
     earningsINR: earningsINR,
     totalEarnings: totalEarnings,
     formattedTotalEarnings: formattedTotalEarnings,
+    exchangeRate: exchangeRate, // <-- Save exchange rate
     timestamp: new Date().toISOString(),
   };
   localStorage.setItem("earningsData", JSON.stringify(earningsData));
@@ -109,6 +110,10 @@ function loadEarningsData() {
     earningsInput.value = formatNumberWithCommas(
       earningsData.earningsINR.toString()
     );
+    // Restore exchange rate if available
+    if (earningsData.exchangeRate) {
+      document.getElementById("rates").value = earningsData.exchangeRate;
+    }
     showResultDiv.innerHTML = `<div class="container">
                     <div id="result">Your monthly earnings are: </br> <div class="total-earnings">Rp${earningsData.formattedTotalEarnings}</div></div></div>`;
   }
