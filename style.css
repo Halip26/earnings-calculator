@@ -60,8 +60,18 @@ small {
   margin-top: 3px;
 }
 
-.earningsInput[type="text"],
-.ratesInput[type="text"] {
+.earningsInput[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin-top: 10px;
+  font-size: 15px;
+  outline-color: orange;
+}
+
+.ratesInput[type="number"] {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
